@@ -17,13 +17,14 @@ html{
     --bg-color: #080808;
     --second-bg-color: #001005;
     --text-color: white;
-    --main-color: #400e91;
+    --main-color: #8b5bd6;
+
 }
 .light-mode {
     --bg-color: #ffffff;
     --second-bg-color: #f0f0f0;
     --text-color: #000000;
-    --main-color: #e34d529b;
+    --main-color: #8b5bd6;
 }
 body{
     background: var(--bg-color);
@@ -79,25 +80,30 @@ section{
     padding: 10rem 12%;
 }
 .home{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15rem;
 }
 .home-content {
+    text-align: center;
+    overflow: hidden; /* Hides the text while it's animating */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    padding: 2rem;
 }
 .home-content h1{
-    font-size: 8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
 }
 .home-content h3{
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 1rem 0;
 }
 .home-content p{
@@ -105,6 +111,7 @@ section{
     font-weight: 500;
     line-height: 1.8;
 }
+
 .home-img img{
     width: 36rem;
     height: 36rem;
@@ -121,6 +128,7 @@ section{
     0 0 4rem var(--main-color),
     inset 0 0 4rem var(--main-color);
 }
+
 .social-icons a{
     display: inline-flex;
     justify-content: center;
@@ -134,6 +142,7 @@ section{
     margin: 3rem 0.5rem;
     transition: 0.3s ease;
 }
+
 .social-icons a:hover{
     color: var(--text-color);
     background-color: var(--main-color);
@@ -149,15 +158,16 @@ section{
     padding: 1rem 3rem;
     background: var(--main-color);
     border-radius: 3rem;
-    box-shadow: 0 0 25px var(--main-color);
-    font-size: 1.8rem;
+    box-shadow: none; /* Remove box-shadow completely */
+    font-size: 1.5rem;
     color: white;
     border: 2px solid transparent;
     font-weight: 600;
     transition: 0.3s ease-in-out;
 }
 .btn:hover{
-    transform: scale(1.05);
+    transform: none;
+    box-shadow: none;
     
 }
 .btn-group a:nth-of-type(2){
@@ -172,67 +182,65 @@ section{
     color: black;
 }
 .text-animation {
-    font-size: 3.5rem;
     font-weight: 600;
     display: inline-block;
-    border-right: 3px solid var(--main-color);
+    border-right: 3px solid var(--main-color);  /* Simulate a cursor */
     white-space: nowrap;
     overflow: hidden;
-    width: fit-content;
-    animation: typing 20s steps(20, end) infinite, blink 1.0s step-end infinite;
+    width: 0; /* Start width at 0 for typing animation */
+    animation: typing 4s steps(23) 1s infinite, blink 0.75s step-end infinite; /* Typing and cursor blink animation */
+    font-size: 6vw; /* Font size responsive based on viewport width */
 }
 
+/* Cursor effect for typing animation */
 .text-animation::after {
-    content: "web developer";
+    content: '';
     color: var(--main-color);
 }
-@keyframes cursor{
-    to{
-        border-left: 2px solid var(--main-color);
-    }
-}
-@keyframes words{
-    0%,25%{
-        content: "Frontend Developer";
-    }
-    26%,
-    50%{
-        content: "Backend Developer";
-    }
-    51%
-    75%{
-        content: "UI/UX Desinger"
-    }
-    76%
-    100%{
-        content: "Web Developer"
-    }
 
-}
-@keyframes typing{
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    90%,
-    95%{
+/* Typing effect animation */
+@keyframes typing {
+    0% {
         width: 0;
     }
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85%{
-        width: calc(100% + 8px);
+    100% {
+        width: 100%;
     }
 }
+
+/* Cursor blinking effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .text-animation {
+        font-size: 10vw; /* Larger font size for mobile */
+        width: 0; /* Ensure animation starts correctly */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-animation {
+        font-size: 15vw; /* Larger font size for smaller screens */
+    }
+}
+
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .about{
     display: flex;
     justify-content: center;
@@ -254,13 +262,13 @@ section{
     0 0 100px var(--main-color);
 }
 .about-content h2{
-    font-size: 7rem;
+    font-size: 5rem;
     text-align: left;
 }
 .about-content p{
     font-size: 1.8rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 758px) {
     .about {
         flex-direction: column;  /* Stacks content vertically on smaller screens */
         text-align: center;      /* Center text */
