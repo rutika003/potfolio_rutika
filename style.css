@@ -102,6 +102,10 @@ section{
     margin-top: 1.5rem;
     line-height: 1;
 }
+.home-content h2{
+    font-size: 2rem;
+    padding-top: 1rem;
+}
 .home-content h3{
     font-size: 3rem;
     margin: 1rem 0;
@@ -188,7 +192,7 @@ section{
     white-space: nowrap;
     overflow: hidden;
     width: 0; /* Start width at 0 for typing animation */
-    animation: typing 4s steps(23) 1s infinite, blink 0.75s step-end infinite; /* Typing and cursor blink animation */
+    animation: typing 4s steps(13) 1s infinite, blink 0.75s step-end infinite; /* Typing and cursor blink animation */
     font-size: 6vw; /* Font size responsive based on viewport width */
 }
 
@@ -216,7 +220,17 @@ section{
 }
 
 /* Mobile responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+    section.home {
+    margin-bottom: 0; /* Remove bottom margin */
+    padding-bottom: 0; /* Remove padding if any */
+  }
+
+  section.about {
+    margin-top: 0; /* Remove top margin */
+    padding-top: 0; /* Remove padding if any */
+  }
+
     .text-animation {
         font-size: 10vw; /* Larger font size for mobile */
         width: 0; /* Ensure animation starts correctly */
@@ -293,67 +307,111 @@ section{
 ::-webkit-scrollbar-track{
     background-color: var(--bg-color);
 }
+./* Skills Section */
 .skills {
     text-align: center;
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: var(--bg-color);
+    position: relative;
 }
 
 .skills .heading {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
     color: var(--main-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
+/* Skills Container Layout */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    max-width: 900px; /* Restrict width to avoid too much spread */
+    max-width: 1000px; /* Adjusted max-width for wider layout */
     margin: 0 auto;
     padding: 0 1rem;
 }
 
+/* Skill Box Styling */
 .skill-box {
-    background: #222;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 0 15px white;
+    background: linear-gradient(135deg, #1e1e1e, #333); /* Dark gradient background */
+    padding: 3rem 2rem; /* More padding for spacing */
+    border-radius: 25px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow effect */
     text-align: center;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
     width: 250px;
+    overflow: hidden;
+    position: relative;
 }
 
+/* Hover Effect for Skill Box */
 .skill-box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--main-color);
+    transform: translateY(-10px); /* Slight upward motion */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+    background: linear-gradient(135deg, var(--main-color), var(--second-bg-color)); /* Color shift on hover */
 }
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns:1fr ; /* Single column on small screens */
-        justify-content: center;
-        align-items: center;
-        padding: 0 1rem;
-    }
-    .skill-box {
-        width: 100%; /* Make boxes take full width of container */
-        max-width: 350px; /* Max width for the boxes */
-    }
+
+/* Inner Content of Skill Box */
+.skill-info {
+    position: relative;
+    z-index: 2;
 }
+
+/* Skill Icon */
 .skill-info i {
-    font-size: 3rem;
+    font-size: 4rem; /* Larger icon size */
     color: var(--main-color);
     margin-bottom: 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
+/* Title of the Skill */
 .skill-info h4 {
     font-size: 1.8rem;
     color: #fff;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
+/* Hover Effect for Skill Icon */
+.skill-box:hover .skill-info i {
+    color: #fff; /* Icon color changes on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        padding: 0 1rem;
+    }
+
+    .skill-box {
+            width: 100%; /* Full width for skill boxes on small screens */
+            max-width: 350px; /* Set a max-width */
+            padding: 2.5rem 1.5rem; /* Adjust padding */
+            background-color: #fff; /* Change background to white for mobile */
+            color: #333; /* Set text color to dark gray */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow for white background */
+        }
+        .skill-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px white; /* Slightly lighter shadow */
+        }
+    
+        .skill-info i {
+            color: var(--main-color); /* Keep the icon color */
+        }
+    
+        .skill-info h4 {
+            color: white; /* Set text color to dark for better contrast on white background */
+        }
+    }
+    
 .progress-bar {
     width: 100%;
     height: 20px;
@@ -374,112 +432,128 @@ section{
 .progress.javascript { width: 75%; }
 .progress.react { width: 70%; }
 .progress.git { width: 80%; }
-.heading{
-    text-align: center;
-    font-size: 7rem;
-    margin: 5rem 0;
-}
-.services{
-    background-color: var(--bg-color);
-    color: black;
-}
-.services h2{
-    color: var(--text-color);
-}
-.services-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    align-items: center;
-    gap: 2.5rem;
-}
-.services-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
-    height: 600px;
-    border-radius: 3rem;
-    cursor: pointer;
-    border: 5px solid transparent;
-    transition: 0.4s ease-in-out;
-}
-.services-box:hover{
-    background-color: var(--second-bg-color);
-    color: var(--main-color);
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
-}
-.service-info{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem;
-}
-.service-info i{
-    font-size: 8rem;
-}
-.service-info h4{
-    font-size: 4rem;
-    margin: 2rem 0;
-    font-weight:800;
-}
-.service-info p{
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1.7;
-}
+/* Project Section Styling */
 .projects {
     background-color: var(--bg-color);
     color: black;
+    padding: 5rem 2rem;
+    text-align: center;
 }
 
 .projects h1 {
-    font-size: 20px;
-    text-align: center;
-    align-items: center;
+    font-size: 2.5rem;
     color: var(--text-color);
     padding-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
+/* Grid Layout for Projects */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
+    grid-template-columns: repeat(3,1fr);
     gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Individual Project Card */
 .project {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
-    height: 200px;
-    border-radius: 3rem;
+    background: linear-gradient(135deg, var(--main-color), var(--second-bg-color));
+    color: var(--text-color);
+    height: 300px;
+    border-radius: 20px;
     cursor: pointer;
-    border: 5px solid transparent;
-    transition: 0.4s ease-in-out;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover Effect for Projects */
 .project:hover {
-    background-color: var(--second-bg-color);
-    color: var(--main-color);
-    border: 5px solid var(--main-color);
-    transform: scale(1.03);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Add a Title or Info on Hover */
+.project::after {
+    content: "Project Title";
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--text-color);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project Link Styling */
 .project a {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--text-color);
     text-decoration: none;
     text-align: center;
+    opacity: 0; /* Make link invisible by default */
+    transition: opacity 0.3s ease;
 }
 
-.project a:hover {
-    color: var(--main-color);
+/* On Hover: Make Project Title and Link Visible */
+.project:hover a {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
+
+/* Project Image Styling (optional if you use images in cards) */
+.project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.project:hover .project-img {
+    opacity: 0.9;
+}
+
+/* Mobile Adjustments for Project Layout */
+@media (max-width: 768px) {
+    .project-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    
+    .project {
+        height: 250px; /* Smaller height for mobile */
+        padding: 2rem;
+    }
+
+    .project a {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .projects h1 {
+        font-size: 2rem; /* Adjust header size */
+    }
+}
+
 .contact{
     background-color: var(--second-bg-color);
 }
