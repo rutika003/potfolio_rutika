@@ -25,8 +25,9 @@
                 <a href="#about">About</a>
                 <a href="#skills">skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
                 <a href="#contact">Contact</a>
-                <button id="theme-toggle">🌙</button>
+                <button id="theme-toggle"> 🌙 </button>
         </nav>
     </header>
     <section class="home" id="home">
@@ -61,9 +62,6 @@
         </div>
     </section>
     <section class="about" id="about">
-        <div class="about-img">
-            <img src="profile.jpg" alt="profile Image">
-        </div>
         <div class="about-content">
             <h2>About <span>Me</span></h2>
             <p>Hello guyzz! I am a Web Developer Intern with a strong foundation in HTML, CSS and JavaScript.
@@ -124,30 +122,114 @@
         </div>
     </section>      
     <section class="projects" id="projects">
-        <div class="top-header">
-            <h1>Projects</h1>
+    <div class="top-header">
+        <h1>Projects</h1>
+    </div>
+
+    <div class="project-list">
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>
+                Designed and developed a responsive personal portfolio using
+                HTML, CSS and JavaScript with dark mode and contact form.
+            </p>
+            <a href="#" class="btn">View Project</a>
         </div>
-        <div class="project-list">
-            <div class="project" data-category="web">
-                <a href="#" target="_blank">Web Project 1</a>
-            </div>
-            <div class="project" data-category="web">
-                <a href="#" target="_blank">Mobile Project 2</a>
-            </div>
-            <div class="project" data-category="mobile">
-                <a href="#" >UI/UX Project 1</a>
-            </div>
-            <div class="project" data-category="mobile">
-                <a href="#">Web Project 2</a>
-            </div>
-            <div class="project" data-category="uiux">
-                <a href="#">Mobile Project 1</a>
-            </div>
-            <div class="project" data-category="uiux">
-                <a href="#">UI/UX Project 2</a>
-            </div>
+
+        <div class="project">
+            <h3>CRUD Application</h3>
+            <p>
+                Built a CRUD app using React and API integration to add,
+                update, delete and fetch user data dynamically.
+            </p>
+            <a href="#" class="btn">View Project</a>
         </div>
-    </section>
+
+    </div>
+</section>
+
+<section class="research" id="research">
+    <div class="top-header">
+        <h1>Research</h1>
+    </div>
+
+    <div class="research-container">
+
+        <!-- Research Box 1 -->
+        <div class="research-box">
+            <h3>Role of Digital Reminder Systems in Improving Personal Healthcare Habits.</h3>
+            <p>
+                Research on how reminder systems improve healthcare habits
+                like medication adherence, hydration and appointments.
+            </p>
+
+            <details class="research-details">
+                <summary class="btn">Read More</summary>
+
+                <p class="more-text">
+                    As healthcare systems increasingly shift toward preventive care and chronic disease management, Digital Reminder 
+                    Systems (DRSs) have emerged as scalable technological interventions to improve adherence to personal health behaviors. 
+                    This study evaluates the effectiveness of digital reminders in enhancing medication adherence, hydration practices, and 
+                    physical activity. A sequential explanatory mixed-methods approach was adopted, combining evidence synthesized from 
+                    more than 40 peer-reviewed clinical and mHealth studies with primary survey data collected from 200 users. 
+                    The findings indicate a substantial personalization effect, with context-aware reminders achieving an 82.5% response 
+                    rate compared to 55.3% for non-personalized notifications. A marked decline in engagement was observed between Days 
+                    14–21, suggesting the onset of notification fatigue. Furthermore, the inclusion of gamification mechanisms, such as 
+                    streak tracking, was associated with a 30% increase in long-term retention. The study concludes that DRS effectiveness 
+                    is strongly influenced by personalization, adaptive timing, and the gradual reduction of prompts as behaviors transition 
+                    toward automaticity. These findings offer evidence-based design implications for the development of sustainable and 
+                    user-centered digital health interventions. 
+                </p>
+            </details>
+            <a href="https://rjwave.org/jaafr/papers/JAAFR2604434.pdf" download class="download-btn">
+                Read Paper
+            </a>
+        </div>
+
+        <!-- Research Box 2 -->
+        <div class="research-box">
+            <h3>Monitoring Systems and Techniques for Precision Agriculture</h3>
+            <p>
+                Study of Precision Agriculture by using Monitoring systems and techniques 
+                that helps or provide better harvesting of crop yields.
+            </p>
+
+            <details class="research-details">
+                <summary class="btn">Read More</summary>
+
+                <p class="more-text">
+                    Precision agriculture leverages advanced monitoring systems and techniques.
+                    The aim of the research paper is to provide better techniques,
+                    Technologies and methodologies to provide better harvesting of Crop yields,
+                    optimise Resource utilization and ensure sustainable farming practices.
+                    This paper focus says on how modern technology like Iot sensors, satellite 
+                    and artificial intelligence will help in changing the way farming works. 
+                    Instead of relying on guesswork, farmers can now use real time data from the soil, 
+                    weather conditions and crop health to make better decisions. By integrating 
+                    real-time data collections and predictive analytics, farmers can make informed 
+                    decision regarding irrigation, fertilization and pest control.The study also 
+                    highlights various monitoring techniques such as satellite imaging, drone surveillance 
+                    and soil nutrient analysis. The adoption of these techniques improves efficiency 
+                    reduces, environmental impact and supports Global food security. 
+                    The various artificial intelligence or machine learning algorithms that we 
+                    used in this research paper are Artificial Neural Networks (ANN), Recurrent 
+                    Neural Networks (RNN), Naive Bayes, etc. to predict the climate, weather, soil 
+                    conditions, and plant disease detection, crop monitoring etc. Combining block 
+                    chain with AI will make farming more transparent, secure and efficient. 
+                    This research highlights the transformative role of AI and block chain in Precision 
+                    agriculture, ensuring efficiency, transparency and sustainability. Future advancement 
+                    in this technologies will create a farming system that will be more reliable, 
+                    transparent and sustainable, benefiting both farmers and consumer.
+                </p>
+            </details>
+            <a href="https://rjwave.org/ijedr/viewpaperforall.php?paper=IJEDR26A1254" download class="download-btn">
+                Read Paper
+            </a>
+        </div>
+
+    </div>
+</section>
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
         <form id="contactForm">
